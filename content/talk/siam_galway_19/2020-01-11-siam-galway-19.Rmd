@@ -1,15 +1,15 @@
 ---
-title: 'What Makes a Good (Fantasy) Football Manager?'
+title: '"How many likes do you think this will get?": Predicting self-exciting processes'
 #authors: [Joey O'Brien]
-event: 'satRdays Cardiff 2019'
-event_url: https://cardiff2019.satrdays.org/
-location: Cardiff, UK
+event: 'Irish SIAM Student Conference'
+event_url: http://www.maths.nuigalway.ie/SIAM-Galway/ConferenceDec2019/
+location: Galway, Ireland
 abstract: Fantasy Premier League (https://fantasy.premierleague.com) is one of the worlds most popular online fantasy sports games with ~7 million players. During the 2018-19 season we undertook a large data scraping exercise to obtain data describing the manager's selections over the year, along with a number of other statistics on the actual footballers upon which the game is based. <p>In this talk we will firstly introduce our dataset before proceeding to discuss the dynamics and actions of the games managers via a number of statistical tools and visualizations obtained through R and the tidyverse, with the hope of determining whether the top (fantasy) mangers earn their title through certain skills and if so what skills?
 #summary: 'Why and how to teach students to create their own website'
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: "2019-11-16"
+date: "2019-12-06"
 #date_end: "2019-09-12T12:00:00Z"
 all_day: true
 
