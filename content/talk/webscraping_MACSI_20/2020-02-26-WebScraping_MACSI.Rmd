@@ -1,6 +1,6 @@
 ---
 title: "Webscraping with R"
-abstract: We'll run through some of the advantages of webscrpaing ones own data alongide some examples using the R language to scrape a variety of data sources.
+abstract: We'll run through some of the advantages of webscrpaing ones own data alongside some examples using the R language to scrape from a variety of data sources.
 abstract_short: ""
 event: UL Statistics Group
 location: Limerick, Ireland
