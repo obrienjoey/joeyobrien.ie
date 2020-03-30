@@ -1,5 +1,5 @@
 +++
-title = "A generalized framework for simultaneous long-short feedback trading"
+title = "A Generalized Framework for Simultaneous Long-Short Feedback Trading"
 date = "2018-09-18"
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
