@@ -1,5 +1,5 @@
 +++
-title = "Spreading of Memes on Multiplex Networks"
+title = "Spreading of memes on multiplex networks"
 date = "2019-02-28"
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.

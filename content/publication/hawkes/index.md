@@ -1,5 +1,5 @@
 +++
-title = "Quantifying Uncertainty in a Predictive Model for Popularity Dynamics"
+title = "Quantifying uncertainty in a predictive model for popularity dynamics"
 date = "2020-01-28"
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
@@ -47,13 +47,15 @@ url_project = ""
 url_slides = ""
 url_video = ""
 url_poster = ""
-url_source = ""
+#url_source = "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.101.062311"
+
+doi = "10.1103/PhysRevE.101.062311"
 
 # Custom links (optional).
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.
-#[[url_custom]]
-#name = "Journal"
-#url = "https://link.springer.com/article/10.1007/s10584-014-1174-4"
+[[url_custom]]
+name = "Journal"
+url = "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.101.062311"
 
 # Does the content use math formatting?
 math = true

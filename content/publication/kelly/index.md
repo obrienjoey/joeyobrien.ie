@@ -1,5 +1,5 @@
 +++
-title = "A Generalization of the Classical Kelly Betting Formula to the Case of Temporal Correlation"
+title = "A generalization of the classical Kelly betting formula to the case of temporal correlation"
 date = "2020-03-05"
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
