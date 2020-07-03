@@ -23,6 +23,7 @@ bio: My research interests include using mathematical techniques alongside stati
 interests:
 - Complex Systems
 - Networks
+- Data Science
 - Statistics
 
 education:
