@@ -1,6 +1,6 @@
 +++
-title = "Quantifying Uncertainty in a Predictive Model for Popularity Dynamics"
-date = "2020-01-28"
+title = "Quantifying uncertainty in a predictive model for popularity dynamics"
+date = "2020-06-03"
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
 
@@ -23,14 +23,14 @@ publication_short = "Physical Review E"
 
 # Abstract and optional shortened version.
 abstract = "The Hawkes process has garnered attention in recent years for its suitability to describe the behavior of online information cascades. Here, we present a fully tractable approach to analytically describe the distribution of the number of events in a Hawkes process, which, in contrast to purely empirical studies or simulation-based models, enables the effect of process parameters on cascade dynamics to be analyzed. We show that the presented theory also allows making predictions regarding the future distribution of events after a given number of events have been observed during a time window. Our results are derived through a novel differential-equation approach to attain the governing equations of a general branching process. We confirm our theoretical findings through extensive simulations of such processes and apply them to empirical data obtained from threads of an online opinion board. This work provides the ground to perform more complete analyses of the self-exciting processes that govern the spreading of information through many communication platforms, including the potential to predict cascade dynamics within confidence limits."
+abstract_short = "The Hawkes process has garnered attention in recent years for its suitability to describe the behavior of online information cascades. Here, we present a fully tractable approach to analytically describe the distribution of the number of events in a Hawkes process, which, in contrast to purely empirical studies or simulation-based models, enables the effect of process parameters on cascade dynamics to be analyzed. We show that the presented theory also allows making predictions regarding the future distribution of events after a given number of events have been observed during a time window."
 
 # Featured image thumbnail (optional)
-image_preview = ''
+#image_preview = ''
 
 # Is this a selected publication? (true/false)
 selected = true
-
-featured = true
+#featured = true
 
 
 # Projects (optional).
@@ -47,8 +47,10 @@ url_project = ""
 url_slides = ""
 url_video = ""
 url_poster = ""
-url_source = ""
+#url_source = "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.10#1.06231"
 
+#url = "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.101.06231#"
+doi = "https://doi.org/10.1103/PhysRevE.101.062311"
 # Custom links (optional).
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.
 #[[url_custom]]
@@ -63,8 +65,8 @@ highlight = true
   
 # Featured image
 # Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
-#[header]
-# image = "memory_v7.jpg"
+[header]
+image = "memory_V7.jpg"
 # caption = "My caption :smile:"
 
 +++

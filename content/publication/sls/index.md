@@ -1,6 +1,6 @@
 +++
 title = "A Generalized Framework for Simultaneous Long-Short Feedback Trading"
-date = "2018-09-18"
+date = "2020-07-21"
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
 
@@ -18,8 +18,8 @@ authors = ["**Joseph D O'Brien**", "Mark E Burke", "Kevin Burke"]
 publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
-publication = "Under Review"
-publication_short = "Under Review"
+publication = "IEEE Transactions on Automatic Control"
+publication_short = "IEEE Transactions on Automatic Control"
 
 # Abstract and optional shortened version.
 abstract = "We present a generalization of the Simultaneous Long-Short (SLS) trading strategy described in recent control literature wherein we allow for different parameters across the short and long sides of the controller; we refer to this new strategy as Generalized SLS (GSLS). Furthermore, we investigate the conditions under which positive gain can be assured within the GSLS setup for both deterministic stock price evolution and geometric Brownian motion. In contrast to existing literature in this area (which places little emphasis on the practical application of SLS strategies), we suggest optimization procedures for selecting the control parameters based on historical data, and we extensively test these procedures across a large number of real stock price trajectories (495 in total). We find that the implementation of such optimization procedures greatly improves the performance compared with fixing control parameters, and, indeed, the GSLS strategy outperforms the simpler SLS strategy in general."
