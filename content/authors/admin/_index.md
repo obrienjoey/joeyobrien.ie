@@ -23,7 +23,6 @@ bio: My research interests include using mathematical techniques alongside stati
 interests:
 - Complex Systems
 - Networks
-- Data Science
 - Statistics
 
 education:
@@ -52,9 +51,9 @@ social:
 - icon: orcid
   icon_pack: ai
   link: https://orcid.org/0000-0002-9516-0175
-#- icon: google-scholar
-#  icon_pack: ai
-#  link: https://scholar.google.com/citations?user=IrhV4UwAAAAJ&hl=en
+- icon: google-scholar
+  icon_pack: ai
+  link: https://scholar.google.com/citations?user=IrhV4UwAAAAJ&hl=en
 #- icon: github
 #  icon_pack: fab
 #  link: https://github.com/gcushen
