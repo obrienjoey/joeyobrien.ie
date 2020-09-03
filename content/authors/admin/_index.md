@@ -77,6 +77,7 @@ I am currently a PhD student at the Universty of Limerick supervised by [Prof. J
 
 ## News
 
+- **September 3rd, 2020**: New preprint! "Identification of skill in an online game: The case of Fantasy Premier League" with James Gleeson and David O'Sullivan. [arXiv link.](https://arxiv.org/abs/2009.01206) 
 - **July 20th, 2020**: New Publication "A Generalized Framework for Simultaneous Long-Short Feedback Trading" in **IEEE Transactions in Automatic Control** with two Dr. Burkes - Mark and Kevin. This article stemmed from my undergraduate dissertation where we look at statistical approaches in applying control theory to trading.
 - **July 1st 2020**: Blog post on what we can learn about Irish life in in the Covid-19 era from technological data appeared on the ECMI (European Consortium for Mathematics in Industry) website. [Link](https://ecmiindmath.org/2020/07/01/covid-19-and-the-irish-routine/) 
 - **June 22nd, 2020**: Our paper on how temporal autocorrelations affect the optimal Kelly betting strategy appeared in **IEEE Control Systems Letters** - work with Kevin Burke, Mark Burke, and Bob Barmish. [Link](https://ieeexplore.ieee.org/document/9122591) | [Arxiv](https://arxiv.org/pdf/2003.02743.pdf). 
