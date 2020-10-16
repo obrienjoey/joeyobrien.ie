@@ -1,24 +1,22 @@
 ---
-title: 'Webscraping with R'
+title: 'Identification of skill in an online game: The case of Fantasy Premier League'
 #authors: [Joey O'Brien]
-event: 'UL Statistics Group'
+event: '7th NetSci Satellite on Quantifying Success'
 #event_url: http://www.maths.nuigalway.ie/SIAM-Galway/ConferenceDec2019/
-location: Limerick, Ireland
-abstract: We'll run through some of the advantages of webscrpaing ones own data alongside some examples using the R language to scrape from a variety of data sources.
+location: Rome, Italy
+abstract: In this talk we consider what makes a successful Fantasy Premier League manager through a combination of data science, networks, and statistical analysis.
 #summary: 'Why and how to teach students to create their own website'
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: "2020-02-26T15:00:00Z"
+date: "2020-09-17T16:40:00Z"
 #date_end: "2020-02-26T16:00:00Z"
 all_day: false
 
 categories:
   - talk
 tags:
-  - rvest
-  - webscraping
-  - xaringan
+  - Networks
   - Fantasy football
 #lastmod: '2019-06-16T02:20:01-07:00'
 featured: no
@@ -32,9 +30,9 @@ links:
 - icon: images
   icon_pack: fas
   name: slides
-  url: "https://joeyobrientalks.netlify.com/ul_stats_webscraping"
-- icon: github
-  icon_pack: fab
-  name: code
-  url: "https://github.com/obrienjoey/scraping_tutorial"
+  url: "https://joeyobrientalks.netlify.app/qs20_fpl/FPL_QS20b.pdf/"
+- icon: play-circle
+  icon_pack: fas
+  name: video
+  url: "https://drive.google.com/file/d/1-KUNlAJhWna0HvlsQYVzvtiqiqrCGswU/view?usp=sharing"
 ---

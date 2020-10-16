@@ -1,0 +1,38 @@
+---
+title: 'Anderson-like localization in real-world non-normal networks'
+#authors: [Joey O'Brien]
+event: 'NetSci 2020'
+#event_url: http://www.maths.nuigalway.ie/SIAM-Galway/ConferenceDec2019/
+location: Rome, Italy
+abstract: In this talk we discuss the level of localization present within the Laplacian matrix of a large collection of empirical networks and demonstrate how it is related to the spectral properties of these network's adjacency.
+#summary: 'Why and how to teach students to create their own website'
+
+# Talk start and end times.
+#   End time can optionally be hidden by prefixing the line with `#`.
+date: "2020-09-21T17:40:00Z"
+#date_end: "2020-02-26T16:00:00Z"
+all_day: false
+
+categories:
+  - talk
+tags:
+  - Networks
+  - Random walks
+#lastmod: '2019-06-16T02:20:01-07:00'
+featured: no
+#image:
+#  caption: '[Photo by Esteban Lopez on Unsplash](https://unsplash.com/photos/rsXAKLDfqB8)'
+#  focal_point: ''
+#  preview_only: no
+#projects: []
+
+links:
+- icon: images
+  icon_pack: fas
+  name: slides
+  url: "https://joeyobrientalks.netlify.app/netsci20_localization/localiztion_netsci20_noVid/pdf"
+- icon: play-circle
+  icon_pack: fas
+  name: video
+  url: "https://drive.google.com/file/d/1v6t-ah4lMtLu5jQ5AlfQpZV6uMtvxo1-/view?usp=sharing"
+---

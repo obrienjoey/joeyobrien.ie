@@ -23,6 +23,8 @@ bio: My research interests include using mathematical techniques alongside stati
 interests:
 - Complex Systems
 - Networks
+- Data Science
+- Science of Success
 - Statistics
 
 education:
@@ -73,12 +75,13 @@ user_groups:
 - Visitors
 ---
 
-I am currently a PhD student at the Universty of Limerick supervised by [Prof. James Gleeson](https://staff.ul.ie/gleesonj/) working on describing the dynamics of complex systems through a combination of mathematical modelling alongside large-scale data analysis. These systems can range from memes, online threads to even Fantasy sports!
+I am currently a PhD student at the Universty of Limerick where I work within the [Mathematics Applications Consortium for Science and Industry (MACSI)](https://ulsites.ul.ie/macsi/) supervised by [Prof. James Gleeson](https://staff.ul.ie/gleesonj/) working on describing the dynamics of complex systems through a combination of mathematical modelling alongside large-scale data analysis. These systems can range from memes, online threads to even Fantasy sports!
 
 ## News
 
-- **September 17th, 2020**: I attended the 7th NetSci Satellite on [Quantifying Success](http://www.quantifysuccess.org/netsci2020) where I presented our work on analysing the success of Fantasy Premier League managers. [Slides](https://joeyobrientalks.netlify.app/qs20_fpl/FPL_QS20b.pdf/)
-- **September 10th, 2020**:  Our work on FPL has been featured in [New Scientist](https://www.newscientist.com/article/2254155-maths-reveals-the-top-strategies-to-win-at-fantasy-football/). 
+- **September 21st, 2020**: Presented at **NetSci 2020** on our work on the occurrence of localization within the dynamics of empirical networks and how it relates to their structural properties. [Slides](https://joeyobrientalks.netlify.app/netsci20_localization/localiztion_netsci20_noVid/pdf)
+- **September 17th, 2020**: I attended the **7th NetSci Satellite on [Quantifying Success](http://www.quantifysuccess.org/netsci2020)** where I presented our work on analysing the success of Fantasy Premier League managers. [Slides](https://joeyobrientalks.netlify.app/qs20_fpl/FPL_QS20b.pdf/)
+- **September 10th, 2020**:  Our work on FPL has been featured in **[New Scientist](https://www.newscientist.com/article/2254155-maths-reveals-the-top-strategies-to-win-at-fantasy-football/)**. 
 - **September 3rd, 2020**: New preprint! "Identification of skill in an online game: The case of Fantasy Premier League" with James Gleeson and David O'Sullivan. [arXiv link.](https://arxiv.org/abs/2009.01206) 
 - **July 20th, 2020**: New Publication "A Generalized Framework for Simultaneous Long-Short Feedback Trading" in **IEEE Transactions in Automatic Control** with two Dr. Burkes - Mark and Kevin. This article stemmed from my undergraduate dissertation where we look at statistical approaches in applying control theory to trading. [Link](https://ieeexplore.ieee.org/document/9149673) | [arXiv](https://arxiv.org/pdf/1806.05561.pdf). 
 - **July 1st 2020**: Blog post on what we can learn about Irish life in in the Covid-19 era from technological data appeared on the ECMI (European Consortium for Mathematics in Industry) website. [Link](https://ecmiindmath.org/2020/07/01/covid-19-and-the-irish-routine/).
