@@ -66,7 +66,7 @@
   # Featured image
   # Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
   [header]
-  image = "memory_V7.jpg"
+  #image = "memory_V7.jpg"
   # caption = "My caption :smile:"
 
-  +++
++++

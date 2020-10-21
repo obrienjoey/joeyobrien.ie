@@ -79,6 +79,7 @@ I am currently a PhD student at the Universty of Limerick where I work within th
 
 ## News
 
+- **October 19th, 2020**: Our latest preprint is out where we apply a complex networks framework towards answering the question of who is the greatest Snooker paper of all time - with James Gleeson. [arXiv link.](https://arxiv.org/abs/2010.08395.pdf) 
 - **September 21st, 2020**: Presented at **NetSci 2020** on our work on the occurrence of localization within the dynamics of empirical networks and how it relates to their structural properties. [Slides](https://joeyobrientalks.netlify.app/netsci20_localization/localiztion_netsci20_noVid/pdf)
 - **September 17th, 2020**: I attended the **7th NetSci Satellite on [Quantifying Success](http://www.quantifysuccess.org/netsci2020)** where I presented our work on analysing the success of Fantasy Premier League managers. [Slides](https://joeyobrientalks.netlify.app/qs20_fpl/FPL_QS20b.pdf/)
 - **September 10th, 2020**:  Our work on FPL has been featured in **[New Scientist](https://www.newscientist.com/article/2254155-maths-reveals-the-top-strategies-to-win-at-fantasy-football/)**. 
