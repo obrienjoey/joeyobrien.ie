@@ -41,7 +41,7 @@
   # Links (optional).
   url_pdf = "https://arxiv.org/abs/2010.08395.pdf"
   url_preprint = "https://arxiv.org/abs/2010.08395"
-  url_code = ""
+  url_code = "https://github.com/obrienjoey/snooker_rankings"
   url_dataset = ""
   url_project = ""
   url_slides = ""
