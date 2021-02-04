@@ -1,0 +1,43 @@
+---
+title: 'What makes a good (fantasy) football manager? - webscraping and data analysis in R'
+#authors: [Joey O'Brien]
+event: 'WhyR? Webinar'
+event_url: https://www.youtube.com/watch?v=lrbWF8nr_FAto
+location: Youtube
+abstract: Arising from the desire for spectators of sporting contests to obtain more enjoyment, Fantasy sports have become increasing popular in recent years. These sports involve competitors to create virtual teams that score points based upon the statistical performances of the physical athletes. Given the virtual structure of these contests there exists an array of data regarding competitor actions available online as a result of their digital traces. In this talk we will look at some techniques within the R programming language that may be used to parse this data via webscraping procedures. We will then describe one such example study focussing specifically on the Fantasy Premier League, the fantasy equivalent of the top division within English soccer. In particular we will consider visual techniques from the Tidyverse suite of packages that allow a descriptive story regarding the science of success behind those competitors who perform well in the game to be developed. 
+#summary: 'Why and how to teach students to create their own website'
+
+# Talk start and end times.
+#   End time can optionally be hidden by prefixing the line with `#`.
+date: "2021-02-04T19:00:00Z"
+#date_end: "2020-02-26T16:00:00Z"
+all_day: false
+
+categories:
+  - talk
+tags:
+- Webscraping
+- Fantasy Premier League
+- Science of success
+#lastmod: '2019-06-16T02:20:01-07:00'
+featured: no
+#image:
+#  caption: '[Photo by Esteban Lopez on Unsplash](https://unsplash.com/photos/rsXAKLDfqB8)'
+#  focal_point: ''
+#  preview_only: no
+#projects: []
+
+links:
+- icon: images
+  icon_pack: fas
+  name: slides
+  url: "https://joeyobrientalks.netlify.app/2021_whyR_webinar/20210204-WhyR.pdf"
+- icon: github
+  icon_pack: fab
+  name: code
+  url: "https://github.com/obrienjoey/WhyR_scraping"
+#- icon: play-circle
+#icon_pack: fas
+#name: video
+#url: "https://www.youtube.com/watch?v=GbsM_qhiQJ0&feature=emb_logo&ab_channel=SIAM-IMADublinArea"
+---
