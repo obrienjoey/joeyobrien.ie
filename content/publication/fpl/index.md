@@ -1,6 +1,6 @@
 +++
 title = "Identification of skill in an online game: The case of Fantasy Premier League"
-date = "2020-09-02"
+date = "2021-03-02"
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
 
@@ -18,8 +18,8 @@ authors = ["**Joseph D O'Brien**", "James P Gleeson","David JP O'Sullivan"]
 publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
-publication = "Under review"
-publication_short = "Under review"
+publication = "PLOS ONE (in press)"
+publication_short = "PLOS ONE (in press)"
 
 # Abstract and optional shortened version.
 abstract = "In all competitions where results are based upon an individual's performance the question of whether the outcome is a consequence of skill or luck arises. We explore this question through an analysis of a large dataset of approximately one million contestants playing Fantasy Premier League, an online fantasy sport where managers choose players from the English football (soccer) league. We show that managers' ranks over multiple seasons are correlated and we analyse the actions taken by managers to increase their likelihood of success. The prime factors in determining a manager's success are found to be long-term planning and consistently good decision-making in the face of the noisy contests upon which this game is based. Similarities between managers' decisions over time that result in the emergence of 'template' teams, suggesting a form of herding dynamics taking place within the game, are also observed. Taken together, these findings indicate common strategic considerations and consensus among successful managers on crucial decision points over an extended temporal period."
