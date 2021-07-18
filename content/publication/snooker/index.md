@@ -19,7 +19,7 @@
 
   # Publication name and optional abbreviated version.
   publication = "Journal of Complex Networks"
-  publication_short = "J. Complex Netw."
+  publication_short = "J. Complex Netw"
 
   # Abstract and optional shortened version.
   abstract = "A detailed analysis of matches played in the sport of Snooker during the period 1968-2020 is used to calculate a directed and weighted dominance network based upon the corresponding results. We consider a ranking procedure based upon the well-studied PageRank algorithm that incorporates details of not only the number of wins a player has had over their career but also the quality of opponent faced in these wins. Through this study we find that John Higgins is the highest performing Snooker player of all time with Ronnie O'Sullivan appearing in second place. We demonstrate how this approach can be applied across a variety of temporal periods in each of which we may identify the strongest player in the corresponding era. This procedure is then compared with more classical ranking schemes. Furthermore, a visualization tool known as the rank-clock is introduced to the sport which allows for immediate analysis of the career trajectory of individual competitors. These results further demonstrate the use of network science in the quantification of success within the field of sport."
