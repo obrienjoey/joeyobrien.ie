@@ -1,0 +1,273 @@
+---
+title: "Data-Driven Snooker Rankings"
+summary: "Borrowing tools from data and network science to answer: who is the greatest snooker player of all time?"
+collection: portfolio
+date: 2021-10-10T00:00:00
+draft: false
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p><em>The following is a project that came from a hobby project arising from my interest in snooker and how ideas from network science can be used in helping to rank competitors in the sport. This resulted in a <a href="https://academic.oup.com/comnet/article/8/6/cnab003/6161497?login=true">peer-reviewed academic article</a> during my PhD studies, a blog post for <a href="https://blog.oup.com/2021/05/a-complex-networks-approach-to-ranking-professional-snooker-players/">Oxford University Press</a>, and some interesting commentary in the <a href="https://drive.google.com/file/d/181W5b-JI2lXMOYw3jNGB88UrK6lsCUba/view?usp=sharing">Sunday Mail</a>!</em></p>
+<p>People love ranking things. Each year we are faced with endless awards ceremonies—just think about the Oscars, Grammys, Ballon d’Or, Time Person of the Year… the list goes on and on.</p>
+<p>The problem with these lists is that they are rarely backed up by quantitative data, which arises from most things rarely directly competing to help us determine who exactly the best is. One area however which experiences no shortage of such data is the realm of sport. So here let’s use a combination of data science and network science to try and answer the question in the case of snooker.</p>
+<p>This will involve
+- obtaining the data (the exact details are beyond the scope of this post but may result in some content further up the road…)
+- performing an exploratory data analysis to get a feel for the underlying structure
+- developing models to rank competitors in a data-driven manner</p>
+<p>It will also be a good chance to show some <code>R</code> code that was used to perform the analysis</p>
+<div id="the-data" class="section level2">
+<h2>1. The Data</h2>
+<p>The data which was scraped from <a href="https://cuetracker.net/">cuetracker</a> is already available on my <a href="https://github.com/obrienjoey/snooker_rankings">Github</a> so let’s load this into <code>R</code> straight away. There’ll be two dataframes, one describing every match played over 50 years of the sport and the other describing the details of the different tournaments in the same time period.</p>
+<pre class="r"><code>## load the packages
+library(tidyverse)
+library(scales)
+library(cowplot)
+library(tidygraph)
+library(igraph)
+library(ggrepel)
+library(Matrix)
+theme_set(theme_light())
+
+tourn_df &lt;- read_csv(&#39;https://raw.githubusercontent.com/obrienjoey/snooker_rankings/master/Data/final_tourn_df.csv&#39;)
+match_df &lt;- read_csv(&#39;https://raw.githubusercontent.com/obrienjoey/snooker_rankings/master/Data/final_match_df.csv&#39;)</code></pre>
+</div>
+<div id="exploratory-data-analysis" class="section level2">
+<h2>2. Exploratory Data Analysis</h2>
+<p>Okay so now we can dive in and do some analysis on these two dataframes using the <code>tidyverse</code> toolbox. First of all how many matches are in the data?</p>
+<pre class="r"><code>match_df %&gt;%
+  select(match_id) %&gt;%
+  unique() %&gt;%
+  nrow()</code></pre>
+<pre><code>## [1] 47710</code></pre>
+<p>And what about the actual players?</p>
+<pre class="r"><code>match_df %&gt;%
+  select(match_id, player_1, player_2) %&gt;%
+  pivot_longer(2:3, values_to = &#39;player&#39;) %&gt;%
+  select(player) %&gt;%
+  unique() %&gt;%
+  nrow()</code></pre>
+<pre><code>## [1] 1221</code></pre>
+<p>Lastly how many tournaments were played?</p>
+<pre class="r"><code>tourn_df %&gt;%
+  nrow()</code></pre>
+<pre><code>## [1] 657</code></pre>
+<p>Okay, that is a good start let’s consider a more technical problem and check which player’s have won the most matches</p>
+<pre class="r"><code># find the result frequencies of each player
+player_result_df &lt;- match_df %&gt;%
+  filter(walkover != TRUE) %&gt;%
+  select(match_id, season, player_1, player_2, player_1_score, player_2_score) %&gt;%
+  mutate(winner = if_else(player_1_score &gt; player_2_score,
+                          player_1, player_2),
+         loser = if_else(player_1_score &gt; player_2_score,
+                         player_2, player_1)
+  ) %&gt;%
+  select(match_id, winner, loser) %&gt;%
+  pivot_longer(cols = 2:3, values_to = &#39;player&#39;, names_to = &#39;result&#39;) %&gt;%
+  group_by(result, player) %&gt;%
+  tally() %&gt;%
+  ungroup() %&gt;%
+  pivot_wider(names_from = &#39;result&#39;, values_from = &#39;n&#39;) %&gt;%
+  mutate(loser = replace_na(loser, 0),
+         winner = replace_na(winner,0),
+         total = loser + winner) %&gt;%
+  pivot_longer(cols = 2:4, names_to = &#39;result&#39;,
+               values_to = &#39;matches&#39;)
+
+
+player_result_df %&gt;%
+  filter(result == &#39;winner&#39;) %&gt;%
+  select(-result) %&gt;%
+  arrange(desc(matches)) %&gt;%
+  slice(1:5)</code></pre>
+<pre><code>## # A tibble: 5 x 2
+##   player            matches
+##   &lt;chr&gt;               &lt;dbl&gt;
+## 1 John Higgins          899
+## 2 Ronnie O&#39;Sullivan     843
+## 3 Stephen Hendry        818
+## 4 Mark Williams         768
+## 5 Steve Davis           761</code></pre>
+<p>So there we have the top five ranked players based on the number of wins they have had during their career.</p>
+<p>Interestingly, there is also a temporal element to this data in that the matches each occur within a given year, let’s look at how the above values vary over time</p>
+<pre class="r"><code># number of tournaments by season
+tourn_season_plot &lt;- match_df %&gt;%
+  mutate(season = as.integer(season)) %&gt;%
+  group_by(season) %&gt;%
+  summarise(no_tournaments = n_distinct(tourn_id)) %&gt;%
+  ggplot(aes(x = season, y = no_tournaments)) +
+  geom_bar(stat=&#39;identity&#39;, fill = &#39;#008DA8&#39;,
+           color = &#39;black&#39;) +
+  scale_x_continuous(expand = c(0,0), breaks = seq(1968,2020,4)) +
+  scale_y_continuous(expand = c(0,0)) +
+  theme_minimal() +
+  labs(x = &#39;Season&#39;, y = &#39;Number of Tournaments&#39;) +
+  theme(axis.line = element_line(),
+        axis.text=element_text(size=12),
+        plot.title.position = &#39;plot&#39;,
+        panel.grid.major.x = element_blank(),
+        legend.text=element_text(size=12),
+        legend.position = c(0.85,0.9),
+        axis.text.x = element_text(angle = 60, hjust = 1),
+        plot.title = element_text(size = 14, face = &#39;bold&#39;),
+        axis.title=element_text(size=14))
+
+# number of players by season
+player_season_plot &lt;- match_df %&gt;%
+  select(season, player_1, player_2) %&gt;%
+  pivot_longer(cols = 2:3, values_to = &#39;player&#39;) %&gt;%
+  mutate(season = as.integer(season)) %&gt;%
+  group_by(season) %&gt;%
+  summarise(no_players = n_distinct(player)) %&gt;%
+  ggplot(aes(x = season, y = no_players)) +
+  geom_bar(stat=&#39;identity&#39;, fill = &#39;#008DA8&#39;,
+           color = &#39;black&#39;) +
+  theme_minimal() +
+  scale_x_continuous(expand = c(0,0), breaks = seq(1968,2020,4)) +
+  scale_y_continuous(expand = c(0,0)) +
+  labs(x = &#39;Season&#39;, y = &#39;Number of Players&#39;) +
+  theme(axis.line = element_line(),
+        axis.text=element_text(size=12),
+        plot.title.position = &#39;plot&#39;,
+        panel.grid.major.x = element_blank(),
+        legend.text=element_text(size=12),
+        legend.position = c(0.85,0.9),
+        axis.text.x = element_text(angle = 60, hjust = 1, size = 10),
+        plot.title = element_text(size = 14, face = &#39;bold&#39;),
+        axis.title=element_text(size=14))
+
+cowplot::plot_grid(tourn_season_plot, player_season_plot)</code></pre>
+<p><img src="/portfolio/20211010_snooker_rankings_files/figure-html/unnamed-chunk-6-1.png" width="672" height="300px" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># plot the pdf of results obtained by each player
+player_result_df %&gt;%
+  group_by(result, matches) %&gt;%
+  summarise(n = n()) %&gt;%
+  ungroup() %&gt;%
+  mutate(freq = n / sum(n)) %&gt;%
+  filter(matches != 0) %&gt;%
+  ggplot(aes(x = matches, y = freq, col = result)) +
+  geom_point() +
+  scale_y_log10(labels=trans_format(&#39;log10&#39;,math_format(10^.x))) +
+  scale_x_log10(labels=trans_format(&#39;log10&#39;,math_format(10^.x))) +
+  labs(y = &#39;Probability&#39;,
+       x = &#39;Number of Matches&#39;
+  ) +
+  theme_minimal() +
+  scale_color_manual(name = &#39;&#39;,
+                     breaks = c(&#39;total&#39;, &#39;winner&#39;, &#39;loser&#39;),
+                     values = c(&#39;#008DA8&#39;,&#39;#C3627D&#39;,&#39;#4A904D&#39;),
+                     labels = c(&#39;Total&#39;, &#39;Won&#39;, &#39;Lost&#39;)) +
+  theme(axis.line = element_line(colour = &#39;black&#39;),
+        axis.text=element_text(size=12),
+        plot.title.position = &#39;plot&#39;,
+        legend.text=element_text(size=12),
+        legend.position = c(0.85,0.85),
+        plot.title = element_text(size = 14, face = &#39;bold&#39;),
+        axis.title=element_text(size=14))</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;result&#39;. You can override using the `.groups` argument.</code></pre>
+<p><img src="/portfolio/20211010_snooker_rankings_files/figure-html/unnamed-chunk-7-1.png" width="672" height="300px" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>result_df &lt;- match_df %&gt;%
+    filter(walkover != TRUE) %&gt;%
+    select(match_id, player_1, player_2, player_1_score, player_2_score) %&gt;%
+    mutate(winner = if_else(player_1_score &gt; player_2_score,
+                            player_1, player_2),
+           loser = if_else(player_1_score &gt; player_2_score,
+                           player_2, player_1),
+    ) %&gt;%
+    select(winner, loser)</code></pre>
+</div>
+<div id="the-model" class="section level2">
+<h2>3. The Model</h2>
+<p>So now getting to the main aim of this post, let’s borrow some tools from network science to help figuring out an alternative way of ranking snooker players. We’ll use what is known as <strong>PageRank</strong>, an algorithm originally developed by the founders of Google in ranking webpages that helped their search engine return better results!</p>
+<p>The main idea is to represent the sport as a <strong>graph</strong>, where each of the <span class="math inline">\(N\)</span> players are a node and the edges of the graph are created by considering the matches played between players. Importantly, the result of the match is important and this is captured by the <strong>direction</strong> of the edge we draw, so in each match we draw the edge from loser to winner. After consider all matches in the dataset we obtain a <span class="math inline">\(N \times N\)</span> matrix with entries <span class="math inline">\(w_{ij}\)</span> describing the number of times player <span class="math inline">\(i\)</span> has lost to player <span class="math inline">\(j\)</span>.</p>
+<p>With this set-up we can proceed to use the PageRank algorithm to rank the players based on the <strong>prestige</strong> of player <span class="math inline">\(i\)</span> - <span class="math inline">\(P_i\)</span>, obtained from the following set of equations (feel free to ignore this part if equations aren’t your thing)</p>
+<p><span class="math display">\[\begin{equation}
+P_i = (1-q)\sum_j P_j \frac{w_{ji}}{k_j^{\text{out}}} + \frac{q}{N} + \frac{1-q}{N}\sum_j P_j \delta(k_j^{\text{out}}) 
+\end{equation}\]</span></p>
+<p>Importantly this algorithm considers not only how many times one player defeated another but also how frequently the defeated player themselves defeated others. In this sense each player has some associated prestige describing their quality, and in defeating a player the winner receives some of this associated prestige. This implies that a win against a strong competitor with high prestige is now more worthwhile to a player’s rank than defeating a weaker competitor.</p>
+<p>Okay, so no doubt there are plenty of software packages to do this calculation for us but sometimes it is nice to code up the system ourselves so let’s do that now, using the brilliant <code>tidygraph</code> and <code>igraph</code> packages to work with the networks.</p>
+<pre class="r"><code>page_rank_sim = function(match_result_df){
+
+  node_list &lt;- match_result_df %&gt;%
+    gather() %&gt;%
+    select(-key) %&gt;%
+    unique() %&gt;%
+    rename(label = value) %&gt;%
+    rowid_to_column(&quot;id&quot;)
+
+  el &lt;- match_result_df %&gt;%
+    count(winner, loser, name = &#39;weight&#39;) %&gt;%
+    rename(target = winner,
+           source = loser) %&gt;%
+    left_join(., node_list, by = c(&#39;source&#39; = &#39;label&#39;)) %&gt;%
+    rename(from = id) %&gt;%
+    left_join(., node_list, by = c(&#39;target&#39; = &#39;label&#39;)) %&gt;%
+    rename(to = id) %&gt;%
+    select(to, from, weight)
+
+  snooker_net &lt;- tbl_graph(nodes = node_list,
+                           edges = el,
+                           directed = TRUE)
+  adj &lt;- as_adj(snooker_net, sparse = TRUE, attr = &#39;weight&#39;)
+
+  ### PageRank algorithm
+
+  N &lt;- node_list %&gt;% nrow() # number of nodes in the network
+  P0 &lt;- rep(1/N, N) # initial values
+  q = 0.15 # page rank factor
+  s_out &lt;- rowSums(adj) # outdegree of the nodes
+
+  P_temp &lt;- P0
+  thres &lt;- 1e-20
+  error &lt;- 1
+  iter = 1
+  while(error &gt; thres &amp; iter &lt; 1e4){
+    temp &lt;- (1-q)*((P_temp/s_out) %*% adj) + (q/N) + ((1-q)/N)*(P0 * (s_out == 0))
+    error &lt;- max(P_temp - temp)
+    P_temp &lt;- temp
+    iter &lt;- iter + 1
+  }
+
+  prestige &lt;- as.vector(temp)
+
+  result &lt;- tibble(player = node_list$label, prestige = prestige,
+                   in_strength = as.vector(colSums(adj))) %&gt;%
+    arrange(desc(prestige)) %&gt;%
+    mutate(rank_pre = rank(-prestige, ties.method = &quot;first&quot;),
+           rank_str = rank(-in_strength, ties.method = &quot;first&quot;))
+
+  result
+}</code></pre>
+</div>
+<div id="results" class="section level2">
+<h2>4. Results</h2>
+<p>Using the approach described above, after constructing a network based upon all recorded professional snooker games, it can quickly be determined who is the greatest player of all time. Interestingly, it is not Ronnie O’Sullivan with his natural talent, Steve Davis and his distinguished trophy room, or the winning machine known as Stephen Hendry, but rather the four-time world champion John Higgins! This result may seem surprising to some snooker fans but when the data is considered it is entirely understandable. While both Davis and Hendry have plenty of trophies and wins to their name, the quality of player competing in their era was considerably less than those faced by Higgins and O’Sullivan (who is ranked the second greatest through our approach).</p>
+<pre class="r"><code>set.seed(1)
+
+# perform the PageRank
+all_time_df &lt;- page_rank_sim(result_df)
+
+all_time_df %&gt;%
+  filter(rank_pre &lt;= 30 | rank_str &lt;= 30) %&gt;%
+  ggplot(aes(x = rank_str, y = rank_pre, label = player)) +
+  geom_abline(slope = 1, intercept = 0,
+              color=&quot;red&quot;,
+              linetype=&quot;dashed&quot;, size=1) +
+  geom_point() +
+  theme_minimal() +
+  geom_text_repel(size = 2.25) +
+  labs(x = &#39;Rank by Wins&#39;,
+       y = &#39;Rank by PageRank&#39;) +
+  theme(axis.line = element_line(colour = &#39;black&#39;),
+        axis.text=element_text(size=10),
+        plot.title.position = &#39;plot&#39;,
+        plot.title = element_text(size = 14, face = &#39;bold&#39;),
+        plot.subtitle = element_text(size = 12),
+        axis.title=element_text(size=12))</code></pre>
+<p><img src="/portfolio/20211010_snooker_rankings_files/figure-html/unnamed-chunk-10-1.png" width="672" height="300px" style="display: block; margin: auto;" /></p>
+</div>
+<div id="concluding-thoughts" class="section level2">
+<h2>5. Concluding Thoughts</h2>
+<p>In order to help satisfy the intrinsic human desire to rank entities, this work has proposed a method which utilizes a mathematical framework to determine a ranking of competitors which considers not only the number of times a player has won but also the quality associated with each win.</p>
+</div>
