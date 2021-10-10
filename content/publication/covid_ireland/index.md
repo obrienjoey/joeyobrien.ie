@@ -42,7 +42,7 @@ selected = true
 # Links (optional).
 url_pdf = "https://arxiv.org/pdf/2106.04705"
 url_preprint = "https://arxiv.org/abs/2106.04705"
-url_code = ""
+url_code = "https://github.com/obrienjoey/ireland_covid_modelling"
 url_dataset = ""
 url_project = ""
 url_slides = ""
