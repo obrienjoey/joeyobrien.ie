@@ -10,11 +10,11 @@ authors:
 superuser: true
 
 # Role/position
-role: PhD Student
+role: Data Scientist/Consultant
 
 # Organizations/Affiliations
 organizations:
-- name: University of Limerick
+- name: Acadia (Quaternion Risk Management)
   url: ""
 
 # Short bio (displayed in user profile at end of posts)
@@ -25,6 +25,7 @@ interests:
 - Networks
 - Data Science
 - Statistics
+- Quantitative Finance
 
 education:
   courses:
@@ -77,8 +78,8 @@ user_groups:
 I am currently a PhD student at the Universty of Limerick where I work within the [Mathematics Applications Consortium for Science and Industry (MACSI)](https://ulsites.ul.ie/macsi/) supervised by [Prof. James Gleeson](https://staff.ul.ie/gleesonj/) working on describing the dynamics of complex systems through a combination of mathematical modelling alongside large-scale data analysis. These systems can range from memes, online threads to even Fantasy sports!
 
 ## News
+- **November 22nd, 2021**: Delighted to see some of our work on Covid-19 modelling publushed in a special issue on ‘Data science approaches to infectious disease surveillance’ in Philosophical Transactions of the Royal Society A   [Link](https://royalsocietypublishing.org/doi/full/10.1098/rsta.2021.0120) | [Preprint.](https://arxiv.org/abs/2106.04705)
 - **October 22nd, 2021**: Just out in Physical Review Research: Our work on Herbert Simon's classical random-copying model and extensions to incorporate memory effects. [Link.](https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.3.043057)
-- **June 8th, 2021**: Delighted to see some of our work on Covid-19 modelling which is utilised in advising NPHET (National Public Health Emergency Team) regarding the epidemic within Ireland appear in preprint form. [Link.](https://arxiv.org/abs/2106.04705)
 - **May 14th, 2021**: New in Physical Review Research - we take a deep dive into the emrgence of leader nodes across a large collection of empirical networks (open access). [Link.](https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.3.023117)
 - **May 3rd, 2021**: I was invited to write a blog for Oxford University Press on our recent work where we applied complex networks theory to the problem of ranking within the sport of snooker. [Link.](https://blog.oup.com/2021/05/a-complex-networks-approach-to-ranking-professional-snooker-players/)
 - **March 7th, 2021**: Just out in Journal of Complex Networks - our work on providing a ranking system to the sport of snooker (open access). [Link.](https://academic.oup.com/comnet/article/8/6/cnab003/6161497?searchresult=1)

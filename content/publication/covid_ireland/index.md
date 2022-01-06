@@ -1,6 +1,6 @@
 +++
-title = "Calibrating COVID-19 SEIR models with time-varying effective contact rates"
-date = "2021-06-08"
+title = "Calibrating COVID-19 susceptible-exposed-infected-removed models with time-varying effective contact rates"
+date = "2021-11-22"
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
 
@@ -18,8 +18,8 @@ authors = ["James P Gleeson", "Thomas Brendan Murphy", "**Joseph D O'Brien**", "
 publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
-publication = "Under review"
-publication_short = "Under review"
+publication = "Philosophical Transactions of the Royal Society A"
+publication_short = "Phil. Trans. R. Soc. A"
 
 # Abstract and optional shortened version.
 abstract = "We describe the population-based SEIR (susceptible, exposed, infected, removed) model developed by the Irish Epidemiological Modelling Advisory Group (IEMAG), which advises the Irish government on COVID-19 responses. The model assumes a time-varying effective contact rate (equivalently, a time-varying reproduction number) to model the effect of non-pharmaceutical interventions. A crucial technical challenge in applying such models is their accurate calibration to observed data, e.g., to the daily number of confirmed new cases, as the past history of the disease strongly affects predictions of future scenarios. We demonstrate an approach based on inversion of the SEIR equations in conjunction with statistical modelling and spline-fitting of the data, to produce a robust methodology for calibration of a wide class of models of this type."
@@ -40,7 +40,7 @@ selected = true
 #projects = ["example-external-project"]
 
 # Links (optional).
-url_pdf = "https://arxiv.org/pdf/2106.04705"
+url_pdf = "https://royalsocietypublishing.org/doi/full/10.1098/rsta.2021.0120"
 url_preprint = "https://arxiv.org/abs/2106.04705"
 url_code = "https://github.com/obrienjoey/ireland_covid_modelling"
 url_dataset = ""
@@ -50,7 +50,7 @@ url_video = ""
 url_poster = ""
 #url_source = "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.10#1.06231"
 
-#url = "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.101.06231#"
+#url = "https://royalsocietypublishing.org/doi/full/10.1098/rsta.2021.0120"
 #doi = "https://arxiv.org/abs/2009.01206"
 # Custom links (optional).
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.
