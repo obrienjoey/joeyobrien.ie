@@ -21,6 +21,7 @@ draft: false
 <h2>1. The Data</h2>
 <p>The data which was scraped from <a href="https://cuetracker.net/">cuetracker</a> is already available on my <a href="https://github.com/obrienjoey/snooker_rankings">Github</a> so let’s load this into <code>R</code> straight away. There’ll be two dataframes, one describing every match played over 50 years of the sport and the other describing the details of the different tournaments in the same time period.</p>
 <pre class="r"><code>## load the packages
+options(tidyverse.quiet = TRUE)
 library(tidyverse)
 library(scales)
 library(cowplot)
@@ -138,8 +139,8 @@ player_season_plot &lt;- match_df %&gt;%
         axis.title=element_text(size=14))
 
 cowplot::plot_grid(tourn_season_plot, player_season_plot)</code></pre>
-<p><img src="/portfolio/20211010_snooker_rankings_files/figure-html/unnamed-chunk-6-1.png" width="672" height="300px" style="display: block; margin: auto;" /></p>
-<pre class="r"><code># plot the pdf of results obtained by each player
+<p><img src="/portfolio/20211010_snooker_rankings/20211010_snooker_rankings_files/figure-html/unnamed-chunk-6-1.png" width="672" height="50px" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># plot the probability distribution of results obtained by each player
 player_result_df %&gt;%
   group_by(result, matches) %&gt;%
   summarise(n = n()) %&gt;%
@@ -165,8 +166,7 @@ player_result_df %&gt;%
         legend.position = c(0.85,0.85),
         plot.title = element_text(size = 14, face = &#39;bold&#39;),
         axis.title=element_text(size=14))</code></pre>
-<pre><code>## `summarise()` has grouped output by &#39;result&#39;. You can override using the `.groups` argument.</code></pre>
-<p><img src="/portfolio/20211010_snooker_rankings_files/figure-html/unnamed-chunk-7-1.png" width="672" height="300px" style="display: block; margin: auto;" /></p>
+<p><img src="/portfolio/20211010_snooker_rankings/20211010_snooker_rankings_files/figure-html/unnamed-chunk-7-1.png" width="672" height="100px" style="display: block; margin: auto;" /></p>
 <pre class="r"><code>result_df &lt;- match_df %&gt;%
     filter(walkover != TRUE) %&gt;%
     select(match_id, player_1, player_2, player_1_score, player_2_score) %&gt;%
@@ -265,7 +265,7 @@ all_time_df %&gt;%
         plot.title = element_text(size = 14, face = &#39;bold&#39;),
         plot.subtitle = element_text(size = 12),
         axis.title=element_text(size=12))</code></pre>
-<p><img src="/portfolio/20211010_snooker_rankings_files/figure-html/unnamed-chunk-10-1.png" width="672" height="300px" style="display: block; margin: auto;" /></p>
+<p><img src="/portfolio/20211010_snooker_rankings/20211010_snooker_rankings_files/figure-html/unnamed-chunk-10-1.png" width="672" height="200px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="concluding-thoughts" class="section level2">
 <h2>5. Concluding Thoughts</h2>
