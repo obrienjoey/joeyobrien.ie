@@ -27,7 +27,7 @@ It will also be a good chance to show some `R` code that was used to perform the
 ## 1. The Data
 
 The data which was scraped from [cuetracker](https://cuetracker.net/) is already available on my [Github](https://github.com/obrienjoey/snooker_rankings) so let's load this into `R` straight away. There'll be two dataframes, one describing every match played over 50 years of the sport and the other describing the details of the different tournaments in the same time period.
-```{r data-and-packages, warning=FALSE, message=FALSE}
+```{r, warning=FALSE, message=FALSE}
 ## load the packages
 options(tidyverse.quiet = TRUE)
 library(tidyverse)
@@ -46,14 +46,14 @@ match_df <- read_csv('https://raw.githubusercontent.com/obrienjoey/snooker_ranki
 ## 2. Exploratory Data Analysis
 
 Okay so now we can dive in and do some analysis on these two dataframes using the `tidyverse` toolbox. First of all how many matches are in the data?
-```{r num_matches}
+```{r}
 match_df %>%
   select(match_id) %>%
   unique() %>%
   nrow()
 ```
 And what about the actual players?
-```{r num_players}
+```{r}
 match_df %>%
   select(match_id, player_1, player_2) %>%
   pivot_longer(2:3, values_to = 'player') %>%
@@ -62,12 +62,12 @@ match_df %>%
   nrow()
 ```
 Lastly how many tournaments were played?
-```{r num_tournaments}
+```{r}
 tourn_df %>%
   nrow()
 ```
 Okay, that is a good start let's consider a more technical problem and check which player's have won the most matches
-```{r result_freq}
+```{r}
 # find the result frequencies of each player
 player_result_df <- match_df %>%
   filter(walkover != TRUE) %>%
@@ -101,7 +101,7 @@ So there we have the top five ranked players based on the number of wins they ha
 
 Interestingly, there is also a temporal element to this data in that the matches each occur within a given year, let's look at how the above values vary over time
 
-```{r temporal_plots, tidy=FALSE, fig.align="center", out.height="50px", message=FALSE}
+```{r, tidy=FALSE, fig.align="center", out.height="50px", message=FALSE}
 # number of tournaments by season
 tourn_season_plot <- match_df %>%
   mutate(season = as.integer(season)) %>%
@@ -151,7 +151,7 @@ player_season_plot <- match_df %>%
 cowplot::plot_grid(tourn_season_plot, player_season_plot)
 ```
 
-```{r pdf_results, fig.align="center", out.height="100px", message=FALSE, warning = FALSE}
+```{r, fig.align="center", out.height="100px", message=FALSE, warning = FALSE}
 # plot the probability distribution of results obtained by each player
 player_result_df %>%
   group_by(result, matches) %>%
@@ -205,7 +205,7 @@ P_i = (1-q)\sum_j P_j \frac{w_{ji}}{k_j^{\text{out}}} + \frac{q}{N} + \frac{1-q}
 Importantly this algorithm considers not only how many times one player defeated another but also how frequently the defeated player themselves defeated others. In this sense each player has some associated prestige describing their quality, and in defeating a player the winner receives some of this associated prestige. This implies that a win against a strong competitor with high prestige is now more worthwhile to a player’s rank than defeating a weaker competitor. 
 
 Okay, so no doubt there are plenty of software packages to do this calculation for us but sometimes it is nice to code up the system ourselves so let's do that now, using the brilliant `tidygraph` and `igraph` packages to work with the networks.
-```{r page_rank}
+```{r}
 page_rank_sim = function(match_result_df){
 
   node_list <- match_result_df %>%
@@ -264,7 +264,7 @@ page_rank_sim = function(match_result_df){
 
 Using the approach described above, after constructing a network based upon all recorded professional snooker games, it can quickly be determined who is the greatest player of all time. Interestingly, it is not Ronnie O’Sullivan with his natural talent, Steve Davis and his distinguished trophy room, or the winning machine known as Stephen Hendry, but rather the four-time world champion John Higgins! This result may seem surprising to some snooker fans but when the data is considered it is entirely understandable. While both Davis and Hendry have plenty of trophies and wins to their name, the quality of player competing in their era was considerably less than those faced by Higgins and O’Sullivan (who is ranked the second greatest through our approach).  
 
-```{r page_rank_results, fig.align="center", out.height="200px"}
+```{r, fig.align="center", out.height="200px"}
 set.seed(1)
 
 # perform the PageRank
