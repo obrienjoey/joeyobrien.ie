@@ -6,10 +6,6 @@ date: 2021-10-10T00:00:00
 draft: false
 ---
 
-```{r setup, include=FALSE} 
-knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
-```
-
 _The following is a project that came from a hobby project arising from my interest in snooker and how ideas from network science can be used in helping to rank competitors in the sport. This resulted in a [peer-reviewed academic article](https://academic.oup.com/comnet/article/8/6/cnab003/6161497?login=true) during my PhD studies, a blog post for [Oxford University Press](https://blog.oup.com/2021/05/a-complex-networks-approach-to-ranking-professional-snooker-players/), and some interesting commentary in the [Sunday Mail](https://drive.google.com/file/d/181W5b-JI2lXMOYw3jNGB88UrK6lsCUba/view?usp=sharing)!_
 
 
