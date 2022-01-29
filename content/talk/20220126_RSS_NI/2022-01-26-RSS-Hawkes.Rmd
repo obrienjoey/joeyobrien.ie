@@ -1,0 +1,47 @@
+---
+title: 'Quantifying uncertainty in a predictive model for popularity dynamics'
+#authors: [Joey O'Brien]
+event: 'Royal Statistical Society (Invited Seminar)'
+event_url: 'https://rss.org.uk/training-events/events/events-2022/local-groups/rssni-talkrssni-talk-january-26th,-2022-quantifyin/#fulleventinfo'
+location: Belfast , Northern Ireland
+abstract: 'The Hawkes process is a form of point process which is self-exciting in nature, implying that the occurrence of events increases the likelihood of further events in the future. This process has garnered much attention in recent years for its suitability in describing the behaviour of online information cascades. Here we present a fully tractable approach to analytically describe the distribution of the number of events in a Hawkes process, which, in contrast to purely empirical studies or simulation-based models, enables the effect of process parameters on cascade dynamics to be analysed. We show that the presented theory also allows analytical predictions regarding the future distribution of events after a given number of events have been observed during a time window. Our results are derived through a differential-equation approach to attain the governing equations of a general branching process which describes said Hawkes process. We proceed to confirm our theoretical findings through extensive simulations of such processes. Lastly, I will demonstrate a generalization of the Hawkes process which incorporates seasonality effects within the model and demonstrate its usefulness in describing the diurnal variations of content popularity observed within empirical social media platforms. Taken together, this work provides the basis for more complete analyses of the self-exciting processes that govern the spreading of information through many communication platforms, including the potential to predict cascade dynamics within confidence limits.'
+#summary: 'Why and how to teach students to create their own website'
+
+# Talk start and end times.
+#   End time can optionally be hidden by prefixing the line with `#`.
+date: "2022-01-26T14:00:00Z"
+#date_end: "2020-02-26T16:00:00Z"
+all_day: false
+
+categories:
+  - talk
+tags:
+- Hawkes process
+- Predicting popularity
+- Data science
+#lastmod: '2019-06-16T02:20:01-07:00'
+featured: no
+#image:
+#  caption: '[Photo by Esteban Lopez on Unsplash](https://unsplash.com/photos/rsXAKLDfqB8)'
+#  focal_point: ''
+#  preview_only: no
+#projects: []
+
+links:
+- icon: images
+  icon_pack: fas
+  name: slides
+#  url: "https://joeyobrientalks.netlify.app/2021_CIT_Sports/120321_CIT_Seminar_Sports.pdf"
+# - icon: github
+#   icon_pack: fab
+#   name: code
+#   url: "https://github.com/obrienjoey/WhyR_scraping"
+# - icon: play-circle
+#   icon_pack: fas
+#   name: video
+#   url: "https://www.youtube.com/watch?v=lrbWF8nr_FA&t=3485s&ab_channel=WhyR%3FFoundation"
+#- icon: play-circle
+#icon_pack: fas
+#name: video
+#url: "https://www.youtube.com/watch?v=GbsM_qhiQJ0&feature=emb_logo&ab_channel=SIAM-IMADublinArea"
+---
