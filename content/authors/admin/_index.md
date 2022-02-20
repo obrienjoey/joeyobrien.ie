@@ -15,10 +15,10 @@ role: Data Scientist/Consultant
 # Organizations/Affiliations
 organizations:
 - name: Acadia (Quaternion Risk Management)
-  url: ""
+  url: "https://www.acadia.inc/quant-services"
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include using mathematical techniques alongside statistical data analysis to gain an understanding into the workings of different complex systems.
+bio: Consultant in quantitative finance and data science for Acadia, working in R and Python.
 
 interests:
 - Complex Systems
@@ -75,16 +75,28 @@ user_groups:
 - Visitors
 ---
 
-I am currently a PhD student at the Universty of Limerick where I work within the [Mathematics Applications Consortium for Science and Industry (MACSI)](https://ulsites.ul.ie/macsi/) supervised by [Prof. James Gleeson](https://staff.ul.ie/gleesonj/) working on describing the dynamics of complex systems through a combination of mathematical modelling alongside large-scale data analysis. These systems can range from memes, online threads to even Fantasy sports!
+I'm a consultant in the Quant Services division of [Acadia](https://www.acadia.inc/quant-services) where I focus on applying 
+techniques from data science and applied mathematics in helping financial groups
+including tier-one investment banks and hedge funds perform efficient risk 
+calculations and analysis within their portfolios.
+
+My interests include statistics, data science, network science, education, and
+public-speaking across a range of domains. This tends to result in working within
+a range of programming languages including R, Python, Julia, and SQL.
+
+I received my PhD in Applied Mathematics from the University of Limerick with a
+focus on describing the dynamics of complex systems through a combination of mathematical modelling alongside large-scale data analysis. These systems can range from memes, online threads to even Fantasy sports!  
 
 ## News
+- **February 19th, 2022**: My first `R` package [spRingsteen](https://github.com/obrienjoey/spRingsteen) has appeared in
+development stage, providing a range of datasets describing the career of Bruce Springsteen in a tidy format for data analysis.
+- **January 26th, 2022**: Gave an invited seminar to the [Royal Statistical Society](https://rss.org.uk/training-events/events/events-2022/local-groups/rssni-talkrssni-talk-january-26th,-2022-quantifyin/#fulleventinfo) (Northern Ireland branch) on some of our recent work on using data-driven complexity science to understand the popularity of online content.
 - **November 22nd, 2021**: Delighted to see some of our work on Covid-19 modelling published in a special issue on ‘Data science approaches to infectious disease surveillance’ in Philosophical Transactions of the Royal Society A   [Link](https://royalsocietypublishing.org/doi/full/10.1098/rsta.2021.0120) | [Preprint.](https://arxiv.org/abs/2106.04705)
 - **October 22nd, 2021**: Just out in Physical Review Research: Our work on Herbert Simon's classical random-copying model and extensions to incorporate memory effects. [Link.](https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.3.043057)
 - **May 14th, 2021**: New in Physical Review Research - we take a deep dive into the emrgence of leader nodes across a large collection of empirical networks (open access). [Link.](https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.3.023117)
-- **May 3rd, 2021**: I was invited to write a blog for Oxford University Press on our recent work where we applied complex networks theory to the problem of ranking within the sport of snooker. [Link.](https://blog.oup.com/2021/05/a-complex-networks-approach-to-ranking-professional-snooker-players/)
-- **March 7th, 2021**: Just out in Journal of Complex Networks - our work on providing a ranking system to the sport of snooker (open access). [Link.](https://academic.oup.com/comnet/article/8/6/cnab003/6161497?searchresult=1)
+- **May 3rd, 2021**: I was invited to write a blog for Oxford University Press on our recent work where we applied complex networks theory alongside data science techniques to the problem of ranking within the sport of snooker. [Link.](https://blog.oup.com/2021/05/a-complex-networks-approach-to-ranking-professional-snooker-players/)
 - **March 4th, 2021**: Our work on Fantasy Premier League has just been published in PLOS ONE, with some media coverage including [New Scientist](https://www.newscientist.com/article/2254155-maths-reveals-the-top-strategies-to-win-at-fantasy-football/), [The Times (London)](https://www.thetimes.co.uk/article/best-fantasy-football-managers-are-the-special-ones-837qqrfqm), [The Daily Star](https://www.dailystar.co.uk/sport/football/fantasy-football-guardiola-jurgen-klopp-23610644), [Today FM (radio interview)](https://www.todayfm.com/podcasts/the-last-word-with-matt-cooper/the-secrets-of-fantasy-football-success), [The Irish Examiner](https://www.irishexaminer.com/news/munster/arid-40237667.html), [The Irish Times](https://www.irishtimes.com/news/offbeat/experts-disclose-secret-to-fantasy-football-s-best-and-the-rest-1.4501480), [Irish Independent](https://www.independent.ie/sport/soccer/premier-league/revealed-ul-study-shows-how-long-term-planning-and-enabler-players-are-secrets-to-fantasy-premier-league-success-40158922.html), [Limerick Leader](https://www.limerickleader.ie/news/sport/614377/university-of-limerick-study-reveals-secrets-of-fantasy-premier-league-success.html), [Limerick Post](https://www.limerickpost.ie/2021/03/06/university-of-limerick-research-identifies-secrets-of-fantasy-premier-league-success/), and [Offaly Express](https://www.offalyexpress.ie/news/sport/615118/revealed-the-secrets-of-fantasy-football-success.html). [Link](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0246698) | [arXiv](https://arxiv.org/abs/2009.01206). 
-- **Ferbruary 4th, 2021**: If you've ever wondered about webscraping in R or the secrets to success in Fantasy Premier League (or both!) then check out this invited webinar I gave for the [WhyR? foundation](http://whyr.pl/foundation/). [Slides](https://joeyobrientalks.netlify.app/2021_whyR_webinar/20210204-WhyR.pdf) | [Video](https://www.youtube.com/watch?v=lrbWF8nr_FA&t=3485s&ab_channel=WhyR%3FFoundation)
+- **Ferbruary 4th, 2021**: If you've ever wondered about webscraping in `R` or the secrets to success in Fantasy Premier League (or both!) then check out this invited webinar I gave for the [WhyR? foundation](http://whyr.pl/foundation/). [Slides](https://joeyobrientalks.netlify.app/2021_whyR_webinar/20210204-WhyR.pdf) | [Video](https://www.youtube.com/watch?v=lrbWF8nr_FA&t=3485s&ab_channel=WhyR%3FFoundation)
 - **December 4th, 2020**: Received a prize for best speaker at the [7th SIAM Irish Student Chapter Conference](https://sites.google.com/view/siam-ima-dublin/events/student-conference?authuser=0) where I presented our work on ranking within complex systems. [Slides](https://joeyobrientalks.netlify.app/2020_SIAM_Snooker/2020_SIAM_Snooker.pdf) | [Video](https://www.youtube.com/watch?v=GbsM_qhiQJ0&feature=emb_logo&ab_channel=SIAM-IMADublinArea)
 - **September 10th, 2020**:  Our work on FPL has been featured in **[New Scientist](https://www.newscientist.com/article/2254155-maths-reveals-the-top-strategies-to-win-at-fantasy-football/)**. 
 
