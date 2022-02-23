@@ -38,7 +38,7 @@ This is exactly the framework introduced in the [**covid19northernireland**](htt
 
 ### Dashboard
 
-Okay, so the data has been collected in a great format which is very easy to work with. Of course there are a huge number of things one could do here (epidemic modelling, spatial statistics,...) but I really wanted to learn about developing dashboards in `R` so that's what I'll write about now (too see the finished product check (**here**[https://obrienjoey.github.io/covidni_dashboard/]). 
+Okay, so the data has been collected in a great format which is very easy to work with. Of course there are a huge number of things one could do here (epidemic modelling, spatial statistics,...) but I really wanted to learn about developing dashboards in `R` so that's what I'll write about now (too see the finished product check [**here**](https://obrienjoey.github.io/covidni_dashboard/)). 
 
 After some initial research I came across the [`flexdashboard`](https://rstudio.github.io/flexdashboard/index.html) package which looked to be perfect for what I wanted to do. In essence it is entirely described in a `.Rmarkdown` document so it is generally okay to work with, plus can look quite fantastic if given a bit of love and care (and help from the `plotly` package!), for example here's one page of the finished dashboard.   
 
