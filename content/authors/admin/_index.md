@@ -88,8 +88,7 @@ I received my PhD in Applied Mathematics from the University of Limerick with a
 focus on describing the dynamics of complex systems through a combination of mathematical modelling alongside large-scale data analysis. These systems can range from memes, online threads to even Fantasy sports!  
 
 ## News
-- **February 19th, 2022**: My first `R` package [spRingsteen](https://github.com/obrienjoey/spRingsteen) has appeared in
-development stage, providing a range of datasets describing the career of Bruce Springsteen in a tidy format for data analysis.
+- **February 19th, 2022**: My first `R` package [spRingsteen](https://obrienjoey.github.io/spRingsteen/) has been published on CRAN, providing a range of datasets describing the career of Bruce Springsteen in a tidy format for data analysis.
 - **January 26th, 2022**: Gave an invited seminar to the [Royal Statistical Society](https://rss.org.uk/training-events/events/events-2022/local-groups/rssni-talkrssni-talk-january-26th,-2022-quantifyin/#fulleventinfo) (Northern Ireland branch) on some of our recent work on using data-driven complexity science to understand the popularity of online content.
 - **November 22nd, 2021**: Delighted to see some of our work on Covid-19 modelling published in a special issue on ‘Data science approaches to infectious disease surveillance’ in Philosophical Transactions of the Royal Society A   [Link](https://royalsocietypublishing.org/doi/full/10.1098/rsta.2021.0120) | [Preprint.](https://arxiv.org/abs/2106.04705)
 - **October 22nd, 2021**: Just out in Physical Review Research: Our work on Herbert Simon's classical random-copying model and extensions to incorporate memory effects. [Link.](https://journals.aps.org/prresearch/pdf/10.1103/PhysRevResearch.3.043057)
