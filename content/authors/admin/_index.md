@@ -75,7 +75,7 @@ user_groups:
 - Visitors
 ---
 
-I am a consultant in the Quant Services division of [Acadia](https://www.acadia.inc/quant-services) where I focus on applying 
+I am a consultant in the Expert Services division of [Acadia](https://www.acadia.inc/quant-services) where I focus on applying 
 techniques from data science and applied mathematics in helping financial groups
 including tier-one investment banks and hedge funds perform efficient risk 
 calculations and analysis within their portfolios.
