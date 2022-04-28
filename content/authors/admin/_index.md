@@ -75,7 +75,7 @@ user_groups:
 - Visitors
 ---
 
-I'm a consultant in the Quant Services division of [Acadia](https://www.acadia.inc/quant-services) where I focus on applying 
+I am a consultant in the Quant Services division of [Acadia](https://www.acadia.inc/quant-services) where I focus on applying 
 techniques from data science and applied mathematics in helping financial groups
 including tier-one investment banks and hedge funds perform efficient risk 
 calculations and analysis within their portfolios.
@@ -88,6 +88,7 @@ I received my PhD in Applied Mathematics from the University of Limerick with a
 focus on describing the dynamics of complex systems through a combination of mathematical modelling alongside large-scale data analysis. These systems can range from memes, online threads to even Fantasy sports!  
 
 ## News
+- **April 26th, 2022**: Interviewed on the radio show Game On from RTE 2FM to discuss the ongoing Snooker World Championship and how mathematics can help us rank the competing players [(1:37:44 onwards)](https://www.rte.ie/radio/2fm/game-on/programmes/2022/0426/1294268-game-on-tuesday-26-april-2022/).
 - **February 19th, 2022**: My first `R` package [spRingsteen](https://obrienjoey.github.io/spRingsteen/) has been published on CRAN, providing a range of datasets describing the career of Bruce Springsteen in a tidy format for data analysis.
 - **January 26th, 2022**: Gave an invited seminar to the [Royal Statistical Society](https://rss.org.uk/training-events/events/events-2022/local-groups/rssni-talkrssni-talk-january-26th,-2022-quantifyin/#fulleventinfo) (Northern Ireland branch) on some of our recent work on using data-driven complexity science to understand the popularity of online content.
 - **November 22nd, 2021**: Delighted to see some of our work on Covid-19 modelling published in a special issue on ‘Data science approaches to infectious disease surveillance’ in Philosophical Transactions of the Royal Society A   [Link](https://royalsocietypublishing.org/doi/full/10.1098/rsta.2021.0120) | [Preprint.](https://arxiv.org/abs/2106.04705)
