@@ -1,14 +1,14 @@
 ---
 title: spRingsteen
 author: ''
-date: '2022-03-19'
+date: '2022-05-04'
 slug: []
 categories: []
 tags: []
 subtitle: 'Scraping all things data about the Boss - Bruce Springsteen, wrapped in a tidy-friendly R package.'
 summary: 'Scraping all things data about the Boss - Bruce Springsteen, wrapped in a tidy-friendly R package.'
 authors: []
-lastmod: '2022-04-29T22:02:41Z'
+lastmod: '2022-05-04T22:02:41Z'
 featured: no
 image:
   caption: ''
@@ -18,7 +18,7 @@ projects: []
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, dev = "ragg_png", res = 300)
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, fig.path = "static")
 library(systemfonts)
 library(tidyverse)
 ```

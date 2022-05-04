@@ -1,14 +1,14 @@
 ---
 title: spRingsteen
 author: ''
-date: '2022-03-19'
+date: '2022-05-04'
 slug: []
 categories: []
 tags: []
 subtitle: 'Scraping all things data about the Boss - Bruce Springsteen, wrapped in a tidy-friendly R package.'
 summary: 'Scraping all things data about the Boss - Bruce Springsteen, wrapped in a tidy-friendly R package.'
 authors: []
-lastmod: '2022-04-29T22:02:41Z'
+lastmod: '2022-05-04T22:02:41Z'
 featured: no
 image:
   caption: ''
@@ -96,7 +96,7 @@ spRingsteen::setlists |>
   )
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" />
+<img src="staticunnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" />
 
 ### Conclusions
 
