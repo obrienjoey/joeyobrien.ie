@@ -6,7 +6,7 @@ tags:
   - data science
   - covid19
   - R
-summary: 'Thoughts on building a framework to automatically collect and update data of the Covid 19 pandemic in Northern Ireland using tools from tidyverse and github.'
+summary: 'Thoughts on building a framework to automatically collect and update data of the Covid 19 pandemic in Northern Ireland.'
 output: blogdown::html_page
 ---
 

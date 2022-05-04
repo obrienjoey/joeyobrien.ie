@@ -6,7 +6,7 @@ tags:
   - data science
   - covid19
   - R
-summary: 'Thoughts on building a framework to automatically collect and update data of the Covid 19 pandemic in Northern Ireland using tools from tidyverse and github.'
+summary: 'Thoughts on building a framework to automatically collect and update data of the Covid 19 pandemic in Northern Ireland.'
 output: blogdown::html_page
 ---
 
@@ -25,7 +25,7 @@ output: blogdown::html_page
 </ol>
 <p>This is exactly the framework introduced in the <a href="https://github.com/obrienjoey/covid19northernireland"><strong>covid19northernireland</strong></a> repo hosted on my github. Let me now talk you through the main workings of the software and how the individual codes work.</p>
 <p>First let’s load the required packages in <code>R</code>.</p>
-<pre class="r"><code>library(tidyverse) # for data wrangling 
+<pre class="r"><code>library(tidyverse) # for data wrangling
 library(janitor) # for cleaning dataframes
 library(padr) # dealing with missing values
 library(zoo) # time series handling
@@ -58,7 +58,7 @@ httr::GET(fname, write_disk(xls_file &lt;- tempfile(fileext = &quot;.xlsx&quot;)
 ##   Size: 3.14 MB
 ## &lt;ON DISK&gt;  C:\Users\JOEYOB~1\AppData\Local\Temp\Rtmp2V42oQ\file4a6871c01034.xlsx</code></pre>
 <p>Now we have a connection to the latest version of the spreadsheet stored in the variable <code>xls_file</code> (thanks to the <code>httr</code> package). Generally we use .csv files when interacting with smaller tabular files, however in this case it is actually an xlsx file and such it has sheets. Fortunately the <code>readxl</code> packages allows us to read directly from a given sheet by providing its name (we’ll look at the <em>Summary Tests</em> sheet) as follows</p>
-<pre class="r"><code>test_df &lt;- read_excel(xls_file, sheet = &quot;Summary Tests&quot;) 
+<pre class="r"><code>test_df &lt;- read_excel(xls_file, sheet = &quot;Summary Tests&quot;)
 test_df</code></pre>
 <pre><code>## # A tibble: 730 x 7
 ##    Sample_Date         `TOTAL TESTS` `INDIVIDUALS TESTED PO~ `ALL INDIVIDUALS T~
@@ -109,7 +109,7 @@ test_df</code></pre>
 on:
   schedule:
     - cron:  &#39;00 22 * * *&#39;
-jobs: 
+jobs:
   CovidDataScrape:
     # The type of runner that the job will run on
     runs-on: windows-latest
@@ -129,9 +129,9 @@ jobs:
       shell: Rscript {0}
     # Run R script
     - name: Get Data
-      run: Rscript code/01_data_update.R      
+      run: Rscript code/01_data_update.R
     # Add new files in data folder, commit along with other modified files, push
-    - name: Commit Files 
+    - name: Commit Files
       run: |
         git config --local user.name &#39;obrienjoey&#39;
         git config --local user.email &quot;mr.joeyob@gmail.com&quot;
