@@ -88,6 +88,7 @@ I received my PhD in Applied Mathematics from the University of Limerick with a
 focus on describing the dynamics of complex systems through a combination of mathematical modelling alongside large-scale data analysis. These systems can range from memes, online threads to even Fantasy sports!  
 
 ## News
+- **July 28th, 2022**: Featured in the [This Working Life](https://www.independent.ie/business/this-working-life-we-make-sure-client-models-stand-up-so-in-some-sense-we-are-helping-avoid-another-crash-41872675.html) column in the **Irish Independent** where I spoke about a day in the life of a data focused Quantitative Analyst.
 - **May 2nd, 2022**: Delighted to have made my TV debut on **Brainstorm** where I explained how applied mathematics and data science can be applied to ranking competitors in the sport of snooker! [(18:01)](https://t.co/HLTZqS5XUP).
 - **April 26th, 2022**: Interviewed on the radio show Game On from RTE 2FM to discuss the ongoing Snooker World Championship and how mathematics can help us rank the competing players [(1:37:44 onwards)](https://www.rte.ie/radio/2fm/game-on/programmes/2022/0426/1294268-game-on-tuesday-26-april-2022/).
 - **February 19th, 2022**: My first `R` package [spRingsteen](https://obrienjoey.github.io/spRingsteen/) has been published on CRAN, providing a range of datasets describing the career of Bruce Springsteen in a tidy format for data analysis.
