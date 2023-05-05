@@ -56,7 +56,9 @@ most_recent_weekday <- function(date){
 
 data_date = format(most_recent_weekday(Sys.Date()), "%d%m%y")
 
-fname = paste0('https://www.health-ni.gov.uk/sites/default/files/publications/health/doh-dd-', data_date,'.xlsx')
+#fname = paste0('https://www.health-ni.gov.uk/sites/default/files/publications/health/doh-dd-', data_date,'.xlsx')
+
+fname = "https://www.health-ni.gov.uk/sites/default/files/publications/health/doh-dd-19-november-2021.xlsx"
 
 # download the file and store a connection to it in xls_file
 httr::GET(fname, write_disk(xls_file <- tempfile(fileext = ".xlsx")))

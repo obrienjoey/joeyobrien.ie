@@ -6,7 +6,6 @@ date: 2021-10-10T00:00:00
 draft: false
 ---
 
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
 <p><em>The following is a project that came from a hobby project arising from my interest in snooker and how ideas from network science can be used in helping to rank competitors in the sport. This resulted in a <a href="https://academic.oup.com/comnet/article/8/6/cnab003/6161497?login=true">peer-reviewed academic article</a> during my PhD studies, a blog post for <a href="https://blog.oup.com/2021/05/a-complex-networks-approach-to-ranking-professional-snooker-players/">Oxford University Press</a>, and some interesting commentary in the <a href="https://drive.google.com/file/d/181W5b-JI2lXMOYw3jNGB88UrK6lsCUba/view?usp=sharing">Sunday Mail</a>!</em></p>
@@ -84,7 +83,7 @@ player_result_df %&gt;%
   slice(1:5)</code></pre>
 <pre><code>## # A tibble: 5 x 2
 ##   player            matches
-##   &lt;chr&gt;               &lt;dbl&gt;
+##   &lt;chr&gt;               &lt;int&gt;
 ## 1 John Higgins          899
 ## 2 Ronnie O&#39;Sullivan     843
 ## 3 Stephen Hendry        818
@@ -139,7 +138,7 @@ player_season_plot &lt;- match_df %&gt;%
         axis.title=element_text(size=14))
 
 cowplot::plot_grid(tourn_season_plot, player_season_plot)</code></pre>
-<p><img src="/portfolio/20211010_snooker_rankings/20211010_snooker_rankings_files/figure-html/unnamed-chunk-6-1.png" width="672" height="50px" style="display: block; margin: auto;" /></p>
+<p><img src="snooker_rankings_files/figure-html/unnamed-chunk-6-1.png" width="672" height="50px" style="display: block; margin: auto;" /></p>
 <pre class="r"><code># plot the probability distribution of results obtained by each player
 player_result_df %&gt;%
   group_by(result, matches) %&gt;%
@@ -166,7 +165,7 @@ player_result_df %&gt;%
         legend.position = c(0.85,0.85),
         plot.title = element_text(size = 14, face = &#39;bold&#39;),
         axis.title=element_text(size=14))</code></pre>
-<p><img src="/portfolio/20211010_snooker_rankings/20211010_snooker_rankings_files/figure-html/unnamed-chunk-7-1.png" width="672" height="100px" style="display: block; margin: auto;" /></p>
+<p><img src="snooker_rankings_files/figure-html/unnamed-chunk-7-1.png" width="672" height="100px" style="display: block; margin: auto;" /></p>
 <pre class="r"><code>result_df &lt;- match_df %&gt;%
     filter(walkover != TRUE) %&gt;%
     select(match_id, player_1, player_2, player_1_score, player_2_score) %&gt;%
@@ -183,7 +182,7 @@ player_result_df %&gt;%
 <p>The main idea is to represent the sport as a <strong>graph</strong>, where each of the <span class="math inline">\(N\)</span> players are a node and the edges of the graph are created by considering the matches played between players. Importantly, the result of the match is important and this is captured by the <strong>direction</strong> of the edge we draw, so in each match we draw the edge from loser to winner. After consider all matches in the dataset we obtain a <span class="math inline">\(N \times N\)</span> matrix with entries <span class="math inline">\(w_{ij}\)</span> describing the number of times player <span class="math inline">\(i\)</span> has lost to player <span class="math inline">\(j\)</span>.</p>
 <p>With this set-up we can proceed to use the PageRank algorithm to rank the players based on the <strong>prestige</strong> of player <span class="math inline">\(i\)</span> - <span class="math inline">\(P_i\)</span>, obtained from the following set of equations (feel free to ignore this part if equations aren’t your thing)</p>
 <p><span class="math display">\[\begin{equation}
-P_i = (1-q)\sum_j P_j \frac{w_{ji}}{k_j^{\text{out}}} + \frac{q}{N} + \frac{1-q}{N}\sum_j P_j \delta(k_j^{\text{out}}) 
+P_i = (1-q)\sum_j P_j \frac{w_{ji}}{k_j^{\text{out}}} + \frac{q}{N} + \frac{1-q}{N}\sum_j P_j \delta(k_j^{\text{out}})
 \end{equation}\]</span></p>
 <p>Importantly this algorithm considers not only how many times one player defeated another but also how frequently the defeated player themselves defeated others. In this sense each player has some associated prestige describing their quality, and in defeating a player the winner receives some of this associated prestige. This implies that a win against a strong competitor with high prestige is now more worthwhile to a player’s rank than defeating a weaker competitor.</p>
 <p>Okay, so no doubt there are plenty of software packages to do this calculation for us but sometimes it is nice to code up the system ourselves so let’s do that now, using the brilliant <code>tidygraph</code> and <code>igraph</code> packages to work with the networks.</p>
@@ -265,7 +264,7 @@ all_time_df %&gt;%
         plot.title = element_text(size = 14, face = &#39;bold&#39;),
         plot.subtitle = element_text(size = 12),
         axis.title=element_text(size=12))</code></pre>
-<p><img src="/portfolio/20211010_snooker_rankings/20211010_snooker_rankings_files/figure-html/unnamed-chunk-10-1.png" width="672" height="200px" style="display: block; margin: auto;" /></p>
+<p><img src="snooker_rankings_files/figure-html/unnamed-chunk-10-1.png" width="672" height="200px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="concluding-thoughts" class="section level2">
 <h2>5. Concluding Thoughts</h2>

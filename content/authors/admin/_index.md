@@ -10,7 +10,7 @@ authors:
 superuser: true
 
 # Role/position
-role: Data Scientist/Consultant
+role: Senior Quantitative Analyst
 
 # Organizations/Affiliations
 organizations:
@@ -18,7 +18,7 @@ organizations:
   url: "https://www.acadia.inc/quant-services"
 
 # Short bio (displayed in user profile at end of posts)
-bio: Consultant in quantitative finance and data science for Acadia, working in R and Python.
+bio: Senior Consultant in quantitative finance and data science for Acadia, working in R and Python.
 
 interests:
 - Complex Systems
@@ -75,7 +75,7 @@ user_groups:
 - Visitors
 ---
 
-I am a consultant in the Expert Services division of [Acadia](https://www.acadia.inc/quant-services) where I focus on applying 
+I am a Senior Consultant in the Expert Services division of [Acadia](https://www.acadia.inc/quant-services) where I focus on applying 
 techniques from data science and applied mathematics in helping financial groups
 including tier-one investment banks and hedge funds perform efficient risk 
 calculations and analysis within their portfolios.
